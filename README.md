@@ -58,7 +58,7 @@ I believe science is better with a laugh. I'm part of **Quimikomedia**, a group 
 
 ## 🌎 Languages
 
-🇪🇸 Spanish (native) · 🇬🇧 English · 🇧🇷 Portuguese
+🇨🇴 Spanish (native) · 🇬🇧 English · 🇧🇷 Portuguese
 
 ---
 
