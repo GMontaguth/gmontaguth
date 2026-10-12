@@ -56,13 +56,6 @@ I'm an astronomer from Colombia 🇨🇴 who studies **how galaxies change depen
 
 I believe science is better with a laugh. I'm part of **Quimikomedia**, a group that mixes humor and science, and I've given outreach talks at planetariums, universities and astronomy nights across Colombia, Chile and Brazil — from *"galactic neighborhoods"* to colliding galaxies. I've also been a radio host and a podcaster. More on my [website](https://gmontaguth.github.io/gmontaguth/#scicomm).
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=GMontaguth&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub stats"/>
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=GMontaguth&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages"/>
-</p>
-
 ## 🌎 Languages
 
 🇪🇸 Spanish (native) · 🇬🇧 English · 🇧🇷 Portuguese
