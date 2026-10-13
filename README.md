@@ -20,7 +20,7 @@ I'm an astronomer from Colombia 🇨🇴 who studies **how galaxies change depen
 - 🛰️ **Surveys & data I work with:** S-PLUS, LSST / Rubin, 4MOST, Virtual Observatory tools
 - 🧩 **Methods:** multi-band photometry, source extraction, bulge–disc decomposition, morphological fitting
 - 🎓 **Background:** BSc in Astronomy, Universidad de Antioquia (Colombia) — thesis on star formation and ISM ionization in minor galaxy mergers
-- 🎤 **Outside research:** science comedy with *Quimikomedia*, podcasts, outreach talks… and running & hybrid training 🏃‍♀️
+- 🎤 **Outside research:** science comedy with *Quimikomedia*, podcasts, outreach talks… and running 🏃‍♀️
 
 ## 🛠️ Toolbox
 
