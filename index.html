@@ -1,341 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gissel P. Montaguth · Astronomer</title>
+<meta name="description" content="Gissel P. Montaguth, postdoctoral researcher at IAG, Universidade de São Paulo. Galaxy evolution in groups, galaxy structure and multi-band surveys (S-PLUS, Rubin/LSST).">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#16213E;       /* deep night sky, hero */
+    --sky-2:#22305A;
+    --paper:#F6F7F9;     /* cool page background */
+    --ink:#1C2333;       /* body text */
+    --muted:#5A6378;
+    --rule:#D9DDE5;
+    --link:#2B4C9B;
+    --halpha:#B8333A;    /* J0660 (H-alpha) red, used sparingly */
+    --serif:"Literata", Georgia, serif;
+    --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans)}
+  a{color:var(--link);text-underline-offset:2px}
+  a:hover{color:var(--halpha)}
+  :focus-visible{outline:2px solid var(--halpha);outline-offset:3px;border-radius:2px}
+  img{max-width:100%;display:block}
 
-  <title>iPortfolio Bootstrap Template - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  /* ---------- top bar ---------- */
+  .bar{position:sticky;top:0;z-index:10;background:rgba(22,33,62,.96);backdrop-filter:blur(6px)}
+  .bar nav{max-width:1040px;margin:0 auto;padding:.7rem 1.5rem;display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
+  .bar .home{font:600 1rem var(--serif);color:#fff;text-decoration:none;margin-right:auto}
+  .bar a:not(.home){color:#C9D1E6;text-decoration:none;font-size:.92rem}
+  .bar a:not(.home):hover{color:#fff}
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  /* ---------- hero ---------- */
+  .hero{background:var(--sky);color:#EEF1F8}
+  .hero-in{max-width:1040px;margin:0 auto;padding:4.5rem 1.5rem 0;display:grid;grid-template-columns:1fr 260px;gap:3rem;align-items:end}
+  .hero h1{font:700 clamp(2.4rem,5.5vw,3.9rem)/1.05 var(--serif);margin:0 0 1rem;letter-spacing:-.01em}
+  .hero .lead{font:400 1.25rem/1.5 var(--serif);max-width:34ch;margin:0 0 1.2rem;color:#fff}
+  .hero .role{margin:0 0 1.6rem;color:#B9C2D9;max-width:48ch}
+  .hero .links{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 3rem;padding:0;list-style:none}
+  .hero .links a{display:inline-block;padding:.45rem .9rem;border:1px solid #4A5A88;border-radius:999px;color:#EEF1F8;text-decoration:none;font-size:.92rem}
+  .hero .links a:hover{border-color:#fff;color:#fff}
+  .hero .links a.cv{background:#EEF1F8;color:var(--sky);border-color:#EEF1F8;font-weight:600}
+  .portrait{border-radius:6px 6px 0 0;overflow:hidden;aspect-ratio:4/5;background:var(--sky-2)}
+  .portrait img{width:100%;height:100%;object-fit:cover}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  /* the 12 S-PLUS filters, from u (352 nm) to z (913 nm) */
+  .bands{display:grid;grid-template-columns:repeat(12,1fr);height:14px}
+  .bands span{display:block}
+  .bands-key{max-width:1040px;margin:0 auto;padding:.5rem 1.5rem 0;font-size:.8rem;color:var(--muted)}
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  /* ---------- sections ---------- */
+  main{max-width:1040px;margin:0 auto;padding:1rem 1.5rem 4rem}
+  section{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:3rem 0;border-top:1px solid var(--rule)}
+  section:first-of-type{border-top:0}
+  section > h2{font:600 1.45rem/1.25 var(--serif);margin:0;position:sticky;top:4.2rem;align-self:start}
+  .body{max-width:68ch}
+  .body p{margin:0 0 1rem}
+  h3{font:600 1.08rem/1.35 var(--serif);margin:0 0 .35rem}
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  .themes{display:grid;gap:1.6rem;margin-top:1.4rem}
+  .themes div{padding-left:1rem;border-left:3px solid var(--rule)}
+  .themes p{margin:0;color:var(--muted)}
 
-  <!-- =======================================================
-  * Template Name: iPortfolio - v3.7.0
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  /* press */
+  .press{margin:0 0 2rem}
+  .press figure{margin:0 0 .9rem;background:#fff;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+  .press figcaption{padding:.6rem .9rem;font-size:.85rem;color:var(--muted)}
+.press h3 a{text-decoration:none}
+  .press h3 a:hover{text-decoration:underline}
+  .press .src{font-size:.88rem;color:var(--muted);margin:0 0 .25rem}
+
+  /* publications */
+  .pubs{list-style:none;margin:0 0 1.4rem;padding:0}
+  .pubs li{display:grid;grid-template-columns:3.2rem 1fr;gap:.8rem;padding:.7rem 0;border-bottom:1px solid var(--rule)}
+  .pubs li:last-child{border-bottom:0}
+  .yr{font:600 .95rem var(--serif);color:var(--muted);padding-top:.1rem}
+  .pubs .t{font-family:var(--serif);font-weight:600;text-decoration:none}
+  .pubs .t:hover{text-decoration:underline}
+  .pubs .m{color:var(--muted);font-size:.93rem}
+  .me{color:var(--ink);font-weight:600}
+  .note{font-size:.93rem;color:var(--muted)}
+
+  .list{margin:0;padding-left:1.1rem}
+  .list li{margin:0 0 .55rem}
+  .list .m{color:var(--muted);font-size:.93rem}
+
+  footer{background:var(--sky);color:#B9C2D9;font-size:.9rem}
+  footer div{max-width:1040px;margin:0 auto;padding:1.6rem 1.5rem}
+  footer a{color:#EEF1F8}
+
+  @media (max-width:820px){
+    .hero-in{grid-template-columns:1fr;padding-top:3rem}
+    .portrait{order:-1;width:150px;border-radius:6px}
+    .hero-in{gap:1.5rem}
+    .bar nav{flex-wrap:nowrap;overflow-x:auto;gap:1.1rem;white-space:nowrap}
+    .hero .links{margin-bottom:1.5rem}
+    section{grid-template-columns:1fr;gap:1rem;padding:2.2rem 0}
+    section > h2{position:static}
+  }
+</style>
 </head>
-
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+<header class="bar">
+  <nav aria-label="Main">
+    <a class="home" href="#top">G. P. Montaguth</a>
+    <a href="#research">Research</a>
+    <a href="#news">In the news</a>
+    <a href="#publications">Publications</a>
+    <a href="#software">Software &amp; teaching</a>
+    <a href="#outreach">Outreach</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Gissel Dayana Pardo Montaguth</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/GisselMontaguth" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#research" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Research</span></a></li>
-          <li><a href="#cv" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>CV</span></a></li>
-          <li><a href="#scicomm" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Sci-Comm</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+<div class="hero" id="top">
+  <div class="hero-in">
+    <div>
+      <h1>Gissel P.<br>Montaguth</h1>
+      <p class="lead">I study how galaxies change depending on the company they keep.</p>
+      <p class="role">Postdoctoral researcher (FAPESP) at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas, Universidade de São Paulo, Brazil. Colombian astronomer.</p>
+      <ul class="links">
+        <li><a class="cv" href="G_Pardo_CV.pdf">Download CV (PDF)</a></li>
+        <li><a href="mailto:montaguth.g.c@gmail.com">Email</a></li>
+        <li><a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Montaguth%2C%20G.%22&amp;sort=date%20desc">NASA ADS</a></li>
+        <li><a href="https://orcid.org/0009-0003-1364-3590">ORCID</a></li>
+        <li><a href="https://github.com/GMontaguth">GitHub</a></li>
+        <li><a href="https://twitter.com/GisselMontaguth">X / Twitter</a></li>
+      </ul>
     </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Gissel P. Montaguth</h1>
-      <p>I'm <span class="typed" data-typed-items="Astronomer"></span></p>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3></h3>
-            <p class="fst-italic">
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>20 May</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span> La Serena, Chile</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bacherlor</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>montaguth.g.c@gmail.com</span></li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              I am a Colombian astronomer and PhD student at the University of La Serena, Chile. I did my undergraduate studies in astronomy at the University of Antioquia, Colombia. During my undergraduate studies I studied galaxy mergers with the purpose of understanding how the interaction of galaxies affected star formation. Now during my PhD I focus on galaxy evolution in dense environments, especially in compact groups, with the idea of studying how the environment can affect the physical and morphological transformations. 
-           On the other hand, I belong to the Quimikomedia group, where the purpose is to make people laugh with a touch of science.  Besides, I love running and hybrid athlete training.</p>
-           </p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-
-    <!-- ======= Resume Section ======= -->
-    <section id="research" class="research">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Research</h2>
-          <p>My main areas of interest are the evolution and formation of galaxies and the large-scale structure of the universe.</p>
-        </div>
-
-      <div class="row">
-      <div class="col-lg-6" data-aos="fade-up">
-            <div class="resume-item">
-              <h4>PhD research</h4>
-              <p><em> </em></p>
-              <p>Currently during my PhD I study how the environment affects the evolution of galaxies (in this particular case dense environments such as compact groups, compared to the field) as morphological and physical properties from an integral observational perspective. </p>
-              <ul>
-                <li>Advisor: Antonela Monachesi and Sergio Torres Flores</li>
-                <li>Universidad de La Serena, Chile</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Undergraduate research</h4>
-              <p><em>SM ionization and star formation in minor mergers of galaxies </em></p>
-              <p>This research focused on the interaction process of minor merges, using photometric data from 8 systems, where 5 of them also had spectroscopic data, taken with the 1.6 m telescope of the Pico dos Dias Observatory (OPD) in Brazil. It was found that the electron density in merges is higher than in isolated galaxies. It was also found that star formation is higher in minor merges than in isolated galaxies, these data were compared with the dispersion of gas velocities where it was found that as one increases the other increases, indicating that the turbulence caused by gravitational interaction favors the formation of stars. by gravitational interaction favors star formation and ISM ionization.</p>
-              <ul>
-                <li>Advisor: Juan Carlos Muñoz CuartasL</li>
-                <li>Universidad de Antioquia, Colombia</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="resume-item">
-              <h4>Book</h4>
-              <ul>
-                <li> <p> Coauthor of: "Arañas de Colombia : biología, envenenamiento y potenciales usos terapéuticos de su veneno" <a href="http://bibliotecadigital.udea.edu.co/handle/10495/19232">link here</a>.</p> </li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Papers</h4>
-              <ul> 
-               
-                <li> </p> Lima-Dias C with Montaguth G.P., 2023. Bulge-disc decomposition of the Hydra cluster galaxies in 12 bands. Submitted to MNRAS and accepted with minor revision.</p> </li>
-                <li> </p> Montaguth G. P., et al., 2023, MNRAS, 524, 5340. Galaxy evolution in compact groups – I. Revealing a transitional galaxy population through a multiwavelength approach. <a href="https://academic.oup.com/mnras/article-abstract/524/4/5340/7231828?redirectedFrom=fulltext">link here</a>.</p> </li>
-     
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="cv" class="cv-bg">
-     <div class="container">
-      <div class="section-title">
-       <h2>CV</h2>
-     </div>
-     <iframe src="G_Pardo_CV.pdf" height="600" width="100%" style="border: none;"></iframe>
-    <p><a href="G_Pardo_CV.pdf" download>Descargar CV</a></p>
+    <div class="portrait"><img src="assets/img/profile-img.jpg" alt="Portrait of Gissel P. Montaguth"></div>
   </div>
-</section>
+  <div class="bands" role="img" aria-label="The twelve S-PLUS filters, from ultraviolet to near-infrared">
+    <span style="background:#5B2A86" title="u (352 nm)"></span>
+    <span style="background:#4B3BA8" title="J0378 (378 nm)"></span>
+    <span style="background:#3F4FC0" title="J0395 (395 nm)"></span>
+    <span style="background:#3567CF" title="J0410 (410 nm)"></span>
+    <span style="background:#2F86D0" title="J0430 (430 nm)"></span>
+    <span style="background:#2BA3A3" title="g (480 nm)"></span>
+    <span style="background:#57B34E" title="J0515 (515 nm)"></span>
+    <span style="background:#D9B526" title="r (625 nm)"></span>
+    <span style="background:#B8333A" title="J0660, H&#945; (660 nm)"></span>
+    <span style="background:#8E2A2E" title="i (766 nm)"></span>
+    <span style="background:#6B2427" title="J0861 (861 nm)"></span>
+    <span style="background:#4A1D22" title="z (911 nm)"></span>
+  </div>
+</div>
+<p class="bands-key">The strip above shows the twelve filters of S-PLUS, the survey behind most of my work.</p>
 
+<main>
 
-    <!-- ======= Services Section ======= -->
-    <section id="scicomm" class="scicomm">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Sci-Comm</h2>
-          <p>I'm part of a group of outreach called Quimikomedia where we pretend to make humor with some science.</p>
+  <section id="research">
+    <h2>Research</h2>
+    <div class="body">
+      <p>Galaxies do not evolve alone. In groups and clusters they collide, merge, lose gas and get stripped, and these encounters change both how they look and whether they keep forming stars. I use multi-band imaging surveys to measure the structure of thousands of galaxies and ask which environments transform them, and how fast.</p>
+      <div class="themes">
+        <div>
+          <h3>Galaxies in groups and compact groups</h3>
+          <p>My PhD (University of La Serena, Chile) followed galaxies in compact groups from a multi-wavelength view, revealing a population of transition galaxies shaped by their environment and by the large-scale structures around them.</p>
         </div>
-      
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/DmNTXa6X0AE44SK.jpeg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3></h3>
-            <p class="fst-italic">
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                 
-              <h4>Audio products</h4>
-              <ul>
-                <li> <p> Radio announcer in the program El laboratorio (the laboratory) in the educational radio system from University of Antioquia <a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/emisora-cultural/am">link here</a>.</p> </li>
-                <li> <p> Podcasters on a humor podcast with some science: La verdad absoluta del peluche <a href="https://open.spotify.com/show/1hxvoQTNyU17UaSbLja5Bk?si=nEr6PMQHSV2zdFRXhjez3A&utm_source=copy-link">link here</a>.</p> </li>
-
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Videos</h4>
-              <ul>
-                <li> Video about the Moon phases in Conociendo el cielo project: <a href="https://youtu.be/3UJRs2d_qj0">link here</a>.</p> </li>
-                <li> Video about the conjunction between Saturn and the Moon in Conociendo el cielo project: <a href="https://youtu.be/f-yMD7RFj3c">link here</a>.</p> </li>
-                <li> Video about Spiders 'Tardes de Ciencia': <a href="https://www.youtube.com/watch?v=VLU_KLDLA2o&t=20s">link here</a>.</p> </li>
-                <li> Video about Let's Talk Cannabis 'Tardes de Ciencia': <a href="https://www.youtube.com/watch?v=k6gn1XMvW74&t=130s">link here</a>.</p> </li>
-                <li> Theater Play "Journey to Earth" at the Universidad de Antioquia: <a href="https://www.youtube.com/watch?v=4MrkRHe_8t8&t=438s">link here</a>.</p> </li
-           </p>
-          </div>
+        <div>
+          <h3>Bulges, discs and the mass–size relation</h3>
+          <p>My current FAPESP project decomposes galaxies into bulge and disc to follow the mass–size relation of each component across environments, from isolated galaxies to clusters and their outskirts.</p>
         </div>
-
+        <div>
+          <h3>Multi-band surveys: S-PLUS and Rubin/LSST</h3>
+          <p>I am a science member of S-PLUS, a member of the LSST Galaxies Science Collaboration and of the CHANCES (4MOST) morphology working group, and I develop tools for structural fitting in large surveys.</p>
+        </div>
       </div>
-          <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/monologos.jpeg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3></h3>
-            <p class="fst-italic">
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-              </div>
-              <h4>Talks and presentation</h4>
-              <ul>
-                <li> <p> Talk for high school students organized by the Network of Colombian Students in Astronomy (RECA) on September 2023: El mundo de las galaxias.</p> </li>
-                <li> <p> Talk at Astronomy Day at the University of La Serena on March, 2023: Dime con quién andas, y te diré quién eres: vecindarios galácticos.</p> </li>
-                <li> <p> Talk at Origenes, Astrofísica de origen colombiano at University of Antioquia on Octuber 2022: Grupos compactos: Ambientes ideales para estudiar la evolución morfológica de las galaxias <a href="https://www.youtube.com/watch?v=5xOOtxOUgmI">link here</a>.</p> </li>
-                <li> <p> Talk at Ciencia en Bicicleta at the planetarium of Medellin on June 22, 2020: Galaxias: Historia de vecindarios espaciales <a href="https://web.facebook.com/PlanetarioMed/videos/294857066153160/">link here</a>.</p> </li>
-                <li> <p> Talk at the "Ximena Luna" forum at the University of Antioquia on October 20, 2021: ¿Como investigar lo que no se ve ni se toca? </li>
-                <li> <p> Talk at Noches de astonomia at HalleyUIS on July 27, 2021: El universo un laboratorio para galaxias <a href="https://www.youtube.com/watch?v=XZA7XPCDbWY">link here</a>.</p> </li>
-                <li> <p> Conversatory for International Day of Women and Girls in Science - Colombia on 2021 at the University of Antioquia.</p> </li>
-                <li> <p> Talk at the planetarium of Medellín in the sky section tonight on July 24, 2020: El cielo esta noche: hablemos de cometas <a href="https://www.youtube.com/watch?v=dHdfh73oIS4&t=16s">link here</a>.</p> </li>
-                <li> <p> Talk at Astroserena on July 6, 2020, entitled: Historia de Galaxias en Colisión <a href="https://www.youtube.com/watch?v=R9-A38eBBso">link here</a>.</p> </li>
-                <li> <p> Talk at Noches de astonomia at Escuela de Astronomía de Cali on June 22, 2020: El universo un laboratorio para galaxias <a href="https://www.facebook.com/escueladeastronomiadecali/videos/276563707023639">link here</a>.</p> </li>
-                <li> <p> Talk at Univercitas on February 28, 2020 on science communication titled: Quién está en lo correcto? <a href="https://www.youtube.com/watch?v=YRe6Kq9Gvjo">link here</a>.</p> </li>
-                <li> <p> Talk at Noches de astonomia at HalleyUIS on July 09, 2019: Historia de Amor y Desamor Galaxias en Colisión <a href="https://www.youtube.com/watch?v=rM6xZf-xF-I&t=1s">link here</a>.</p> </li>                    
-                <li> <p> Monologues at the Semilleros de Investigación meeting on November 2019 at U</p> </li>
-                <li> <p> Talk for "EL bicentenario" at Aguachica, Colombia on 2019. University of Antioquia, East Campus.</p> </li>
-                <li> <p> Theater Play "Komediologos" at the University of Antioquia museum, Colombia on 2018.</p> </li>
-                
-              </ul>
-            </div>
-          </div>
-        </div>
-    </section><!-- End Services Section -->
+    </div>
+  </section>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
+  <section id="news">
+    <h2>In the news</h2>
+    <div class="body">
+      <article class="press">
+        <figure>
+          <!-- Figure 6 of Montaguth et al. 2026, ApJ 999, 160 (the figure featured by AAS Nova). Save it as assets/img/transition-galaxies.jpg -->
+          <img src="assets/img/transition-galaxies.jpg" alt="Six transition galaxies from S-PLUS imaging; three of them show signs of past disturbances." loading="lazy">
+          <figcaption>Six transition galaxies from our sample. Montaguth et al. 2026, ApJ, 999, 160.</figcaption>
+        </figure>
+        <p class="src">AAS Nova, 4 May 2026</p>
+        <h3><a href="https://aasnova.org/2026/05/04/featured-image-galaxies-caught-in-transition/">Featured Image: Galaxies Caught in Transition</a></h3>
+        <p>The American Astronomical Society highlighted our study of about 4,000 galaxies in groups and in the field, which shows that transition galaxies are strongly shaped by the group environment.</p>
+      </article>
+      <article class="press">
+        <p class="src">Revista Pesquisa FAPESP, 4 June 2026 (in Portuguese)</p>
+        <h3><a href="https://revistapesquisa.fapesp.br/ambiente-cosmico-molda-estrutura-das-galaxias-de-transicao-que-estao-parando-de-gerar-novas-estrelas/">Ambiente cósmico molda estrutura das galáxias de transição, que estão parando de gerar novas estrelas</a></h3>
+        <p>FAPESP's magazine covered the same work: in groups, transition galaxies are smaller and more compact than in isolation, as if they had lost their outer discs.</p>
+      </article>
+    </div>
+  </section>
 
-        <div class="section-title">
-          <h2>Contact me</h2>
-           <p> Please feel free to write to me.</p>
-        </div>
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="body">
+      <p class="note">13 refereed papers, 4 as first author, and 6 submitted. The full list is on <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Montaguth%2C%20G.%22&amp;sort=date%20desc">NASA ADS</a>.</p>
+      <h3>First author</h3>
+      <ul class="pubs">
+        <li><span class="yr">2026</span><div><a class="t" href="https://doi.org/10.3847/1538-4357/ae42ca">Galaxies caught in transition: the role of group environment in shaping the mass–size relation in the local Universe</a><div class="m"><span class="me">Montaguth, G. P.</span>, et al. · ApJ, 999, 160</div></div></li>
+        <li><span class="yr">2026</span><div><a class="t" href="https://doi.org/10.3847/1538-4357/ae2bdd">Galaxy evolution in compact groups. III. Structural analysis of galaxies and dynamical state of non-isolated compact groups</a><div class="m"><span class="me">Montaguth, G. P.</span>, et al. · ApJ, 998, 91</div></div></li>
+        <li><span class="yr">2025</span><div><a class="t" href="https://doi.org/10.1051/0004-6361/202451198">Galaxy evolution in compact groups. II. Witnessing the influence of major structures in their evolution</a><div class="m"><span class="me">Montaguth, G. P.</span>, et al. · A&amp;A, 696, A240</div></div></li>
+        <li><span class="yr">2023</span><div><a class="t" href="https://doi.org/10.1093/mnras/stad2235">Galaxy evolution in compact groups – I. Revealing a transitional galaxy population through a multiwavelength approach</a><div class="m"><span class="me">Montaguth, G. P.</span>, et al. · MNRAS, 524, 5340</div></div></li>
+      </ul>
+      <h3>Selected co-authored</h3>
+      <ul class="pubs">
+        <li><span class="yr">2026</span><div><a class="t" href="https://arxiv.org/abs/2609.23140">Star formation and morphological trends in the Antlia cluster: probing environmental influence out to 5R<sub>200</sub></a><div class="m">Lima-Dias, C., et al. incl. <span class="me">Montaguth, G. P.</span> · A&amp;A, in press</div></div></li>
+        <li><span class="yr">2026</span><div><a class="t" href="https://doi.org/10.3847/1538-4357/ae84d0">S-PLUS Clusters And Large-scale Environments (SCALE). I. A catalog of known clusters and groups in DR5 and a pilot study of Abell 4038</a><div class="m">Mendes de Oliveira, C., et al. incl. <span class="me">Montaguth, G. P.</span> · ApJ, 1007, 202</div></div></li>
+        <li><span class="yr">2026</span><div><a class="t" href="https://doi.org/10.3847/1538-4357/ae8d1f">The S-PLUS Fifth Data Release: over 4500 square degrees of the southern sky and a multicolor view of the Hydra and Antlia galaxy clusters</a><div class="m">Vinicius Rodrigues de Lima, E., et al. incl. <span class="me">Montaguth, G. P.</span> · ApJ, 1007, 167</div></div></li>
+        <li><span class="yr">2026</span><div><a class="t" href="https://doi.org/10.1051/0004-6361/202556607">Star-forming compact groups: tracing the early evolutionary stages of compact group environments</a><div class="m">Ortiz-Gómez, S., et al. incl. <span class="me">Montaguth, G. P.</span> · A&amp;A, 707, A18</div></div></li>
+        <li><span class="yr">2024</span><div><a class="t" href="https://doi.org/10.1093/mnras/stad3571">Bulge–disc decomposition of the Hydra cluster galaxies in 12 bands</a><div class="m">Lima-Dias, C., et al. incl. <span class="me">Montaguth, G. P.</span> · MNRAS, 527, 5792</div></div></li>
+      </ul>
+    </div>
+  </section>
 
-        <div class="row" data-aos="fade-in">
+  <section id="software">
+    <h2>Software &amp; teaching</h2>
+    <div class="body">
+      <ul class="list">
+        <li><a href="https://github.com/GMontaguth/MorphoPLUS"><strong>MorphoPLUS</strong></a>: multi-band structural fitting of galaxies in S-PLUS images (Python, bash, GalfitM). <span class="m">Used in my papers and by students I mentor.</span></li>
+        <li><a href="https://github.com/GMontaguth/splus-sextractor-workshop">S-PLUS SExtractor workshop</a>: hands-on material for building catalogues from S-PLUS images of the Hydra cluster. <span class="m">Taught at the S-PLUS school <em>From Image to Science</em>, IAG/USP, July 2026.</span></li>
+        <li><a href="https://github.com/GMontaguth/Virtual_observatoy_class">Virtual Observatory class</a>: finding and accessing astronomical data with VO tools.</li>
+      </ul>
+      <p style="margin-top:1.2rem">I supervise and mentor undergraduate and graduate students at USP and the University of La Serena on galaxy structure, environment and machine-learning validation of structural fits.</p>
+    </div>
+  </section>
 
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
+  <section id="outreach">
+    <h2>Outreach</h2>
+    <div class="body">
+      <p>I think science lands better with a laugh. With <strong>Quimikomedia</strong>, a science-comedy group, I have done stand-up, theatre and a podcast, and I give talks at planetariums, universities and astronomy nights in Colombia, Chile and Brazil.</p>
+      <ul class="list">
+        <li><a href="https://open.spotify.com/show/1hxvoQTNyU17UaSbLja5Bk">La Verdad Absoluta del Peluche</a>, science-humour podcast with Quimikomedia.</li>
+        <li>Radio host of <a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/emisora-cultural/am"><em>El Laboratorio</em></a>, University of Antioquia radio.</li>
+        <li><a href="https://www.youtube.com/watch?v=5xOOtxOUgmI">Grupos compactos: ambientes ideales para estudiar la evolución morfológica de las galaxias</a>, talk at <em>Orígenes</em>, University of Antioquia, 2022.</li>
+        <li><a href="https://www.youtube.com/watch?v=R9-A38eBBso">Historia de galaxias en colisión</a>, AstroSerena, 2020.</li>
+        <li><a href="https://youtu.be/3UJRs2d_qj0">Moon phases</a> and <a href="https://youtu.be/f-yMD7RFj3c">the Saturn–Moon conjunction</a>, videos for <em>Conociendo el Cielo</em>.</li>
+      </ul>
+    </div>
+  </section>
 
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>montaguth.g.c@gmail.com</p>
-              </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="body">
+      <p><a href="mailto:montaguth.g.c@gmail.com">montaguth.g.c@gmail.com</a><br>
+      Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG)<br>
+      Universidade de São Paulo, Rua do Matão 1226, São Paulo, Brazil</p>
+      <p class="note">I speak Spanish, Portuguese and English.</p>
+    </div>
+  </section>
 
-            </div>
+</main>
 
-          </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+<footer>
+  <div>© 2026 Gissel P. Montaguth · Last updated November 2026</div>
+</footer>
 
 </body>
-
 </html>
